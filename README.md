@@ -11,6 +11,7 @@
 ## Результат
 ![Capture-2023-04-12-001353](https://user-images.githubusercontent.com/41699729/231265767-d1adebed-54b6-4b14-b3c0-29017b7a62a9.png)
 
-## Демка
+## Посмотреть демку
 
-Надо сделать `ng serve`
+* Установи все зависимости `npm install --legacy-peer-deps`
+* Выполни команду `npm start`
