@@ -1,23 +1,16 @@
-# AngularFormsValidation
+# Формы
 
-This project explains about validations in Reactive and Template-driven forms in Angular. We will learn about the inbuilt as well as custom validations.
+Третья часть первой домашки по ангуляру
 
-# Article
+## От чего отталкивался при решении
 
-Read the articles at my blog
+За основву брал эти две статьи
 - [Reactive Form Validation in Angular](https://ankitsharmablogs.com/reactive-form-validation-in-angular/)
 - [Template-Driven Form Validation In Angular](https://ankitsharmablogs.com/template-driven-form-validation-in-angular/)
 
-# Live Demo
+## Результат
+![Capture-2023-04-12-001353](https://user-images.githubusercontent.com/41699729/231265767-d1adebed-54b6-4b14-b3c0-29017b7a62a9.png)
 
-This app is hosted on Heroku. See the app in action at https://ng-forms-validation.web.app/
+## Демка
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-# registration-form-angular 
+Надо сделать `ng serve`
