@@ -1,0 +1,123 @@
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="display-5 text-center">Самая лучшая форма</h3>
+      </div>
+      <div class="card-body">
+        <form
+          [formGroup]="registerForm"
+          (ngSubmit)="onSubmit()"
+          autocomplete="off"
+        >
+          <div class="tui-form__row">
+            <tui-input type="email" formControlName="email">
+              Электронная почта
+            </tui-input>
+            <span
+              class="text-danger"
+              *ngIf="
+                  (registerFormControl.email.touched || submitted) &&
+                  registerFormControl.email.errors?.['required']"
+            >
+              Электронная почта обязательна
+            </span>
+            <span
+              class="text-danger"
+              *ngIf="
+                  registerFormControl.email.touched &&
+                  registerFormControl.email.errors?.['email']"
+            >
+              Введите валидное имя электронной почты (пример, kotik@vasya.vk)
+            </span>
+          </div>
+          <div class="tui-form__row">
+            <tui-input-password
+              formControlName="password"
+            >
+              Пароль
+            </tui-input-password>
+            <span
+              class="text-danger"
+              *ngIf="
+                  (registerFormControl.password.touched || submitted) &&
+                  registerFormControl.password.errors?.['required']"
+            >
+              Пароль обязателен
+            </span>
+            <span
+              class="text-danger"
+              *ngIf="
+                  registerFormControl.password.touched &&
+                  registerFormControl.password.errors?.['invalidPassword']"
+            >
+              Пароль имеет длину минимум 5 символов, в нем есть прописная + заглавная латинские буквы, цифра + спецсимвол из списка _!#+-$
+            </span>
+          </div>
+          <div class="tui-form__row">
+            <tui-input-password
+              formControlName="confirmPassword"
+            >
+              Подтвердите пароль
+            </tui-input-password>
+            <span
+              class="text-danger"
+              *ngIf="
+                  (registerFormControl.confirmPassword.touched || submitted) &&
+                  registerFormControl.confirmPassword.errors?.['required']"
+            >
+              Подтвердите пароль — обязательное поле
+            </span>
+            <span
+              class="text-danger"
+              *ngIf="
+                  registerFormControl.confirmPassword.touched &&
+                  registerFormControl.confirmPassword.errors?.['passwordMismatch']"
+            >
+              Пароли не совпадают
+            </span>
+          </div>
+          <div class="tui-form__row">
+            <tui-checkbox-block formControlName="agreeToTermsCheckbox">
+              Соглашусь со всеми условиями не читая
+            </tui-checkbox-block>
+            <p
+              class="text-danger"
+              *ngIf="
+                  (registerFormControl.agreeToTermsCheckbox.touched || submitted) &&
+                  registerFormControl.agreeToTermsCheckbox.errors?.['required']"
+            >
+              Ты должен принять наши условия :)
+            </p>
+          </div>
+          <div style="display: flex; gap: 16px;" class="tui-form__row">
+            <button tuiButton type="submit">
+              Регистрация
+            </button>
+            <button
+              type="reset"
+              tuiButton
+              (click)="resetForm()"
+            >
+              Сбросить значения формы
+            </button>
+          </div>
+        </form>
+        <div *ngIf="submitted">
+          <p>
+            {{ registerFormControl.email.value }}
+          </p>
+          <p>
+            {{ registerFormControl.password.value }}
+          </p>
+          <p>
+            {{ registerFormControl.confirmPassword.value }}
+          </p>
+          <p>
+            {{ registerFormControl.agreeToTermsCheckbox.value }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
